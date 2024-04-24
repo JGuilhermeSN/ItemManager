@@ -10,4 +10,5 @@ class AppColors {
   static final focusColor = Color(0xFFff1457);
   static final mainColor = Color(0xFF453745);
   static final textColor = Color(0xFF35313b);
+  static final whitecolor = Color(0xFFffffff);
 }
