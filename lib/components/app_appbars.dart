@@ -8,7 +8,7 @@ PreferredSizeWidget appbaritem(String barname) {
     title: Text(barname),
     titleTextStyle: TextStyle(
       fontSize: 20,
-      color: AppColors.appbar,
+      color: AppColors.whitecolor,
     ),
   );
 }
