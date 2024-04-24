@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:itemmanager/components/app_colors.dart';
 import 'package:itemmanager/components/app_text.dart';
+import 'package:itemmanager/components/app_formfields.dart';
+import '../components/app_appbars.dart';
 
 class NewItem extends StatefulWidget {
   const NewItem({super.key});
@@ -16,11 +18,7 @@ class _NewItemState extends State<NewItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Novo Empréstimo'),
-        backgroundColor: AppColors.appbar,
-        centerTitle: true,
-      ),
+      appBar: appbaritem('Novo Empréstimo'),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
@@ -28,50 +26,26 @@ class _NewItemState extends State<NewItem> {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Descrição do Equipamento',
-                      labelStyle:
-                          TextStyle(fontSize: 18, color: AppColors.mainColor),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.mainColor)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: AppColors.focusColor, width: 1.5))),
-                ),
-              ),
+              const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: AppFormfield(
+                    titleLabel: 'Descrição do Item',
+                    icon: null,
+                  )),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Destinatário Responsável',
-                      labelStyle:
-                          TextStyle(fontSize: 18, color: AppColors.mainColor),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.mainColor)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: AppColors.focusColor, width: 1.5))),
-                ),
-              ),
+              const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: AppFormfield(
+                    titleLabel: 'Destinatário Responsável',
+                    icon: null,
+                  )),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Funcionário Responsável',
-                      labelStyle:
-                          TextStyle(fontSize: 18, color: AppColors.mainColor),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.mainColor)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: AppColors.focusColor, width: 1.5))),
-                ),
-              ),
+              const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: AppFormfield(
+                    titleLabel: 'Funcionário Responsável',
+                    icon: null,
+                  )),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -86,6 +60,7 @@ class _NewItemState extends State<NewItem> {
                         color: AppColors.appbar,
                       ),
                       enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(color: AppColors.mainColor)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
