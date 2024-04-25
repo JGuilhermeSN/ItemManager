@@ -1,8 +1,11 @@
-# itemmanager
+# --- ITEM MANAGER --
+### by José Guilherme/ Eduardo Vinícius
 
---- ITEM MANAGER --
-by José Guilherme
+Aplicativo em desenvolvimento para gerenciamento de itens de setores empresariais, principalmente relacionados a empréstimos de equipamentos internos; Interface de Usuário para criação de chamados de suporte;
+Interface de Administador para histórico de chamados e retiradas de equipamentos.
 
-Desc.: app em desenvolvimento para gerenciamento de itens de setores empresariais, principalmente relacionados a emprestimos de equipamentos internos.
-Futuramente gerando PDFs de comprovante de emprestimos e tambem inventarios de equipamentos de setor.
+Implementações futuras:
+Gerador de PDFs para comprovante de emprestimos.
+
+
 
