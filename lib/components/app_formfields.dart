@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:itemmanager/components/app_colors.dart';
 
 class AppFormfield extends StatelessWidget {
@@ -21,12 +19,13 @@ class AppFormfield extends StatelessWidget {
           labelStyle: TextStyle(fontSize: 18, color: AppColors.mainColor),
           prefixIcon: icon,
           iconColor: AppColors.appbar,
-          prefixIconColor: AppColors.focusColor,
+          prefixIconColor: AppColors.darkerColor,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: AppColors.mainColor)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.focusColor, width: 1.5))),
+              borderSide:
+                  BorderSide(color: AppColors.darkerColor, width: 1.5))),
     );
   }
 }
