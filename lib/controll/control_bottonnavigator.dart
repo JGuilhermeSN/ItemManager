@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:itemmanager/components/app_colors.dart';
 import 'package:itemmanager/pages/history.dart';
 import 'package:itemmanager/pages/new_item.dart';
 import 'package:itemmanager/pages/suport_call.dart';
 
-class homepage extends StatefulWidget {
-  const homepage({super.key});
+class Homepage extends StatefulWidget {
+  const Homepage({super.key});
 
   @override
-  State<homepage> createState() => _BottonNavBarState();
+  State<Homepage> createState() => _BottonNavBarState();
 }
 
-class _BottonNavBarState extends State<homepage> {
+class _BottonNavBarState extends State<Homepage> {
   List<Widget> pageList = [];
   int _currentIndex = 0;
   @override
@@ -36,8 +34,8 @@ class _BottonNavBarState extends State<homepage> {
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         backgroundColor: AppColors.appbar,
-        selectedItemColor: AppColors.focusColor,
-        unselectedItemColor: AppColors.whitecolor,
+        selectedItemColor: AppColors.whitecolor,
+        unselectedItemColor: AppColors.darkerColor,
         selectedFontSize: 16,
         onTap: _onItemTapped,
         items: const [

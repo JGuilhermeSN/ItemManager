@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:itemmanager/components/app_buttons.dart';
 import 'package:itemmanager/components/app_colors.dart';
-import 'package:itemmanager/components/app_text.dart';
 import 'package:itemmanager/components/app_formfields.dart';
 import '../components/app_appbars.dart';
 
@@ -13,7 +13,7 @@ class NewItem extends StatefulWidget {
 
 // Pagina de novo registro de emprestimo de equipamento
 class _NewItemState extends State<NewItem> {
-  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,6 @@ class _NewItemState extends State<NewItem> {
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 10),
               const Padding(
@@ -64,14 +63,35 @@ class _NewItemState extends State<NewItem> {
                           borderSide: BorderSide(color: AppColors.mainColor)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: AppColors.focusColor, width: 1.5))),
+                              color: AppColors.darkerColor, width: 1.5))),
                   onTap: () {
                     _selectDate();
                   },
                 ),
               ),
-              Row(
-                children: [],
+              const SizedBox(height: 20),
+              Column(
+                children: [
+                  SizedBox(
+                    height: 45,
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: AppButtons.menuButtonStyle,
+                      child: const Text('Salvar'),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 15),
+              SizedBox(
+                height: 45,
+                width: MediaQuery.of(context).size.width * .5,
+                child: TextButton(
+                  onPressed: () {},
+                  style: AppButtons.cleanButtonStyle,
+                  child: const Text('Limpar'),
+                ),
               )
             ],
           ),
@@ -80,16 +100,28 @@ class _NewItemState extends State<NewItem> {
     );
   }
 
+  // Função para abrir o calendario, retorna a datat selecionada
   Future<void> _selectDate() async {
-    DateTime? _picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2000),
-        lastDate: DateTime(2100));
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+      locale: const Locale("pt", "BR"),
+      builder: (context, child) => Theme(
+        data: ThemeData().copyWith(
+          colorScheme: ColorScheme.light(
+            primary: AppColors.appbar,
+            onPrimary: AppColors.whitecolor,
+          ),
+        ),
+        child: child!,
+      ),
+    );
 
-    if (_picked != null) {
+    if (picked != null) {
       setState(() {
-        _dateController.text = _picked.toString().split(" ")[0];
+        _dateController.text = picked.toString().split(" ")[0];
       });
     }
   }
